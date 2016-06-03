@@ -52,6 +52,15 @@ your nginx configuration to suppress them::
           access_log off;
         }
 
+If you're seeing following recurring messages in your error logfile: 
+`access forbidden by rule, client: xx.xx.xx.xx, server: your_server, request: "GET /data/.ocdata` 
+This access is ok and used by ownCloud for internal processes. Add this section 
+to your nginx configuration if you want to suppress them::
+
+        location = /data/\.ocdata {
+          access_log off;
+        }
+
 JavaScript (.js) or CSS (.css) files not served properly
 ========================================================
 

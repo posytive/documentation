@@ -92,10 +92,12 @@ your nginx installation.
       }
   
       location ~ ^/(?:build|tests|config|lib|3rdparty|templates|data)/ {
-          deny all;
+          return 404;
+          break;
       }
       location ~ ^/(?:\.|autotest|occ|issue|indie|db_|console) {
-          deny all;
+          return 404;
+          break;
       }
   
       location ~ 
@@ -231,10 +233,13 @@ your nginx installation.
   
           location ~ 
           ^/owncloud/(?:build|tests|config|lib|3rdparty|templates|data)/ {
-              deny all;
+              return 404;
+              break;
           }
           location ~ ^/owncloud/(?:\.|autotest|occ|issue|indie|db_|console) {
-              deny all;
+              return 404;
+              break;
+
           }
   
           location ~ 

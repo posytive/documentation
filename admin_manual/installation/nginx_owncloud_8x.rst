@@ -74,11 +74,13 @@ the examples, as long lines may be broken for page formatting.
       }
 
       location ~ ^/(build|tests|config|lib|3rdparty|templates|data)/ {
-          deny all;
+          return 404;
+          break;
       }
 
       location ~ ^/(?:\.|autotest|occ|issue|indie|db_|console) {
-          deny all;
+          return 404;
+          break;
       }
 
       location / {
